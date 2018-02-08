@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^5.0.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.12"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "react_redux_auth_tokens",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kotchaparn-w/react_redux_auth_tokens.git"
+  },
+  "author": "Bella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kotchaparn-w/react_redux_auth_tokens/issues"
+  },
+  "homepage": "https://github.com/kotchaparn-w/react_redux_auth_tokens#readme"
+}
