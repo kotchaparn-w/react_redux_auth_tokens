@@ -8,7 +8,12 @@
         "prefer-arrow-callback": "off",
         "space-before-function-paren": "off",
         "consistent-return": "off",
-        "prefer-destructuring": "off"
+        "prefer-destructuring": "off",
+        "react/jsx-filename-extension": "off",
+        "react/jsx-indent": "off",
+        "react/prefer-stateless-function": "off",
+        "react/self-closing-comp": "off",
+        "react/jsx-indent-props": 0
       }
     
 }
