@@ -1,0 +1,14 @@
+{
+    "extends": "airbnb",
+    "rules": {
+        "indent": 0,
+        "func-names": ["error", "never"],
+        "no-console": "off",
+        "comma-dangle":"off",
+        "prefer-arrow-callback": "off",
+        "space-before-function-paren": "off",
+        "consistent-return": "off",
+        "prefer-destructuring": "off"
+      }
+    
+}

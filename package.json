@@ -3,9 +3,13 @@
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "jwt-simple": "^0.5.1",
     "mongoose": "^5.0.3",
     "morgan": "^1.9.0",
-    "nodemon": "^1.14.12"
+    "nodemon": "^1.14.12",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0"
   },
   "scripts": {
     "start": "node server.js"
@@ -14,7 +18,13 @@
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kotchaparn-w/react_redux_auth_tokens.git"
