@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import Mobile from '../mobile';
 
 class Signin extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            mobile : "apple"
+        }
+    }
+
     handleFormSubmit({ email, password }) {
         console.log(email, password);
     }
@@ -10,6 +18,7 @@ class Signin extends Component {
         const { handleSubmit } = this.props;
 
         return (
+            <div>
             <form onSubmit={handleSubmit(this.handleFormSubmit)}>
                 <fieldset className="form-group">
                     <label htmlFor="email">Email</label>
@@ -31,6 +40,8 @@ class Signin extends Component {
                 </fieldset>
                 <button action="submit" className="btn btn-primary">Sign in</button>
             </form>
+                {this.state.mobile && <Mobile /> }
+            </div>
         );
     }
 }
