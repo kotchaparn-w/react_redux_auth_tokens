@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import Mobile from '../mobile';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 
 class Signin extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            mobile : "apple"
-        }
-    }
-
-    handleFormSubmit({ email, password }) {
+    handleFormSubmit({email, password}) {
         console.log(email, password);
+        this.props.signinUser({ email, password });
     }
 
     render() {
         const { handleSubmit } = this.props;
-
         return (
             <div>
-            <form onSubmit={handleSubmit(this.handleFormSubmit)}>
+            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                 <fieldset className="form-group">
                     <label htmlFor="email">Email</label>
                     <Field 
@@ -40,13 +35,15 @@ class Signin extends Component {
                 </fieldset>
                 <button action="submit" className="btn btn-primary">Sign in</button>
             </form>
-                {this.state.mobile && <Mobile /> }
+
             </div>
         );
     }
 }
 
+// Signin = connect(null, actions)(Signin);
+
 export default reduxForm({
     form: 'signin',
     fields: ['email', 'password']
-})(Signin);
+})(connect(null, actions)(Signin));

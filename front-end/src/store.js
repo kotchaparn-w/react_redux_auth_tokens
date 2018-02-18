@@ -1,11 +1,12 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import reduxThunk from 'redux-thunk';
 import rootReducer from './reducers';
 import DevTools from './Devtools';
 
 
 const enhancer = compose(
   // Middleware you want to use in development:
-  applyMiddleware(),
+  applyMiddleware(reduxThunk),
   // Required! Enable Redux DevTools with the monitors you chose
   DevTools.instrument()
 );
