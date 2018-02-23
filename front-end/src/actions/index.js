@@ -26,18 +26,22 @@ export function signinUser ({ email, password }) {
 
         .catch(() => {
             dispatch({ type: UNAUTH_USER });
+            // If request is bad...
+            // - Show an error to the user
+            dispatch(authError('Bad Login Info'));
         });
-
-        // If request is bad...
-        // - Show an error to the user
-        dispatch(authError('Bad Login Info'));
     };
 }
-
 
 export function authError(error) {
     return {
         type: AUTH_ERROR,
         payload: error
     };
+}
+
+export function signoutUser() {
+    localStorage.removeItem('token');
+
+    return { type: UNAUTH_USER };
 }

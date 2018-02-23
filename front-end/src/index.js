@@ -8,6 +8,8 @@ import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import history from './history';
 import Signin from './components/auth/Signin';
+import Signout from './components/auth/Signout';
+import Signup from './components/auth/Signup';
 import configureStore from './store';
 
 import DevTools from './Devtools';
@@ -20,6 +22,8 @@ ReactDOM.render(
         <Router history={history}>
             <App >
                 <Route path="/signin" component={Signin} />
+                <Route path="/signout" component={Signout} />
+                <Route path="/signup" component={Signup} />
             </App>
         </Router>
     <DevTools />
