@@ -5,9 +5,20 @@ import * as actions from '../../actions';
 
 
 class Signin extends Component {
-    handleFormSubmit({email, password}) {
+    handleFormSubmit({ email, password }) {
         console.log(email, password);
         this.props.signinUser({ email, password });
+    }
+
+    renderAlert() {
+        const { errorMessage } = this.props;
+        if (errorMessage) {
+            return (
+                <div className="alert alert-danger">
+                    <strong>Oops!</strong> { errorMessage }
+                </div>
+            );
+        }
     }
 
     render() {
@@ -17,7 +28,7 @@ class Signin extends Component {
             <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                 <fieldset className="form-group">
                     <label htmlFor="email">Email</label>
-                    <Field 
+                    <Field
                         name="email"
                         component="input"
                         type="text"
@@ -28,22 +39,24 @@ class Signin extends Component {
                     <label htmlFor="password">Password</label>
                     <Field
                         name="password"
-                        type="input"
+                        type="password"
                         component="input"
                         className="form-control"
                     />
                 </fieldset>
+                {this.renderAlert()}
                 <button action="submit" className="btn btn-primary">Sign in</button>
             </form>
-
             </div>
         );
     }
 }
 
-// Signin = connect(null, actions)(Signin);
+function mapStatetoProps(state) {
+    return { errorMessage: state.auth.error };
+}
 
 export default reduxForm({
     form: 'signin',
     fields: ['email', 'password']
-})(connect(null, actions)(Signin));
+})(connect(mapStatetoProps, actions)(Signin));
